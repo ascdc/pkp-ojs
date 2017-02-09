@@ -9,9 +9,6 @@ RUN apt-get install git -y \
     && git config --global url.https://.insteadOf git:// \
     && rm -fr /var/www/html/* \
     && git clone -v --recursive --progress https://github.com/pkp/ojs.git --branch ojs-stable-2_4_8 --single-branch /var/www/html \
-    && cd /var/www/html/lib/pkp \
-    && curl -sS https://getcomposer.org/installer | php \
-    && php composer.phar update \
     && cd /var/www/html \
     && find . | grep .git | xargs rm -rf \
     && apt-get remove git -y \

@@ -23,7 +23,7 @@ RUN cp config.TEMPLATE.inc.php config.inc.php \
     && mkdir -p /var/www/files/ \
     && chown -R www-data:www-data /var/www/ \
 
-RUN apt-get -y install cron curl wget openssh-server pwgen vim && \
+RUN apt-get install -y cron curl wget openssh-server pwgen vim && \
 	mkdir -p /var/run/sshd &&  \
 	sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
 	sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && \

@@ -21,7 +21,7 @@ RUN apt-get install git -y \
 
 RUN cp config.TEMPLATE.inc.php config.inc.php \
     && mkdir -p /var/www/files/ \
-    && chown -R www-data:www-data /var/www/ \
+    && chown -R www-data:www-data /var/www/
 
 RUN apt-get install -y cron curl wget openssh-server pwgen vim && \
 	mkdir -p /var/run/sshd &&  \
